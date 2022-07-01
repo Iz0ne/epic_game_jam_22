@@ -411,3 +411,18 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
+1656704693 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\mainc.cpp
+	<SFML/Graphics.hpp>
+
+1656716235 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.cpp
+	"character.h"
+
+1656716374 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\main.cpp
+	<SFML/Graphics.hpp>
+	"character.h"
+
+1656716388 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<string>
+

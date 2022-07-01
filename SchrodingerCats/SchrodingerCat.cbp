@@ -44,7 +44,9 @@
 		<Linker>
 			<Add directory="C:/Users/mateo/Desktop/CodeBlocks/Libraries/SFML-2.5.1/lib" />
 		</Linker>
-		<Unit filename="mainc.cpp" />
+		<Unit filename="character.cpp" />
+		<Unit filename="character.h" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
