@@ -9,7 +9,6 @@ animation::animation(int initFrameXPos, int initFrameYPos, int initFrameWidth, i
         cerr<<"Character error: Loading texture"<<endl;
         system("pause");
     }
-
     //Create frames positions/dimensions
     for(int i(0); i<mNumFrames;i++){
         mFrames[i]= {initFrameXPos + i*initFrameHeight, initFrameYPos, initFrameWidth, initFrameHeight};

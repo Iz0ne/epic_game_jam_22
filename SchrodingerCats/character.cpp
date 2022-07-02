@@ -9,9 +9,6 @@ character::character(const sf::Vector2f position, std::string spriteSheetPath){
     mAnimations[int(mAnimationIdx::walkingRight)]=animation(0,2*32,32,32,spriteSheetPath);
     mAnimations[int(mAnimationIdx::walkingUp)]=animation(0,3*32,32,32,spriteSheetPath);
 
-    mSprite.setTexture(mTexture);
-    mSprite.setTextureRect(sf::IntRect(0,0,32,32));
-
     mPosition=position;
 }
 
@@ -50,4 +47,6 @@ void character::update(float deltaTime){
     mAnimations[int(currentAnimation)].applyToSprite(mSprite);
 
     mSprite.setPosition(mPosition);
+    sf::FloatRect rect=mSprite.getGlobalBounds();
+
 }

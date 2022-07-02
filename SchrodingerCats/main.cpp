@@ -1,18 +1,41 @@
 #include <SFML/Graphics.hpp>
 #include<chrono>
 #include"character.h"
+#include"object.h"
+#include"tilemap.h"
 
 using namespace std;
 
 int main()
 {
     //Create window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Schrodinger's Cats");
+    sf::RenderWindow window(sf::VideoMode(512, 256), "Schrodinger's Cats");
     window.setVerticalSyncEnabled(true);
 
+    //create tileMap
+    const int level[]=
+    {
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+    };
+
+    tilemap mapLevel;
+    if(!mapLevel.load(sf::Vector2u(32,32),level,16,8,"../SpriteSheets/Tileset/tileset.png")){
+        return -1;
+    }
+
+
     //Create players
-    character player1({100.0f,100.0f},"../Sprites/Pipoya/pipo-nekonin029.png");
-    character player2({100.0f,100.0f},"../Sprites/Pipoya/pipo-nekonin026.png");
+    character player1({100.0f,100.0f},"../SpriteSheets/Characters/pipo-nekonin029.png");
+    character player2({100.0f,100.0f},"../SpriteSheets/Characters/pipo-nekonin026.png");
+
+    object tunnelEffect({256.0f,128.0f},"../SpriteSheets/Objects/pipo-popupemotes015.png");
 
     //Create time point for measurement
     auto timePoint = std::chrono::steady_clock::now();
@@ -69,9 +92,13 @@ int main()
         player2.setVelocityDirection(p2Direction);
         player1.update(deltaTime);
         player2.update(deltaTime);
+        tunnelEffect.update(deltaTime);
         window.clear();
+        window.draw(mapLevel);
+        tunnelEffect.draw(window);
         player1.draw(window);
         player2.draw(window);
+
         window.display();
     }
 
