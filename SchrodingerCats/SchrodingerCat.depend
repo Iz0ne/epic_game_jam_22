@@ -414,15 +414,30 @@
 1656704693 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\mainc.cpp
 	<SFML/Graphics.hpp>
 
-1656720212 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.cpp
+1656783710 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.cpp
 	"character.h"
 
-1656720150 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\main.cpp
+1656783757 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\main.cpp
 	<SFML/Graphics.hpp>
+	<chrono>
 	"character.h"
 
-1656718238 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.h
+1656788155 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.h
 	<SFML/Graphics.hpp>
-	<iostream>
 	<string>
+	"animation.h"
+
+1656769660 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\animation.cpp
+	"animation.h"
+
+1656782952 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\animation.h
+	<SFML/Graphics.hpp>
+	<string>
+	<iostream>
+
+1656788001 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\object.cpp
+	"object.h"
+
+1656788215 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\object.h
+	"animation.h"
 
