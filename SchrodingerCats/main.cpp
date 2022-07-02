@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    character player1("piponekonin002.png",1,1);
+    character player1("../Sprites/Pipoya/pipo-nekonin002.png",20,20);
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Cyan);
@@ -20,7 +20,8 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        //window.draw(shape);
+        window.draw(*player1.getSprite());
         window.display();
     }
 

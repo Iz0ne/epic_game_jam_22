@@ -44,6 +44,8 @@
 		<Linker>
 			<Add directory="C:/Users/mateo/Desktop/CodeBlocks/Libraries/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="animation.cpp" />
+		<Unit filename="animation.h" />
 		<Unit filename="character.cpp" />
 		<Unit filename="character.h" />
 		<Unit filename="main.cpp" />

@@ -8,10 +8,11 @@ class character{
 
     public:
     character(std::string texturePath, unsigned int numOfRow, unsigned int numOfCols);
+    ~character();
     void moveCharacter(char direction);
     //void pickUpObject(void);
-    //~character();
 
+    sf::Sprite* getSprite(void);
 
     protected:
     sf::Texture mTexture;
