@@ -39,6 +39,11 @@ void character::setSpeed(float speed){
 
 void character::draw(sf::RenderTarget& renderTarget) const{
     renderTarget.draw(mSprite);
+
+    sf::RectangleShape rectangle(sf::Vector2f(13, 18));
+    rectangle.setFillColor(sf::Color(0,0,255));
+    rectangle.setPosition(sf::Vector2f(mSprite.getPosition().x+16-(rectangle.getSize().x/2)+0.5, mSprite.getPosition().y+10));
+    renderTarget.draw(rectangle);
 }
 
 void character::update(float deltaTime){
@@ -47,6 +52,9 @@ void character::update(float deltaTime){
     mAnimations[int(currentAnimation)].applyToSprite(mSprite);
 
     mSprite.setPosition(mPosition);
-    sf::FloatRect rect=mSprite.getGlobalBounds();
+}
 
+
+sf::Sprite& character::getSprite(void){
+    return mSprite;
 }

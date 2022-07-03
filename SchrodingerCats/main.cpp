@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     //Create window
-    sf::RenderWindow window(sf::VideoMode(512, 256), "Schrodinger's Cats");
+    sf::RenderWindow window(sf::VideoMode(512, 256), "Schrodinger's Cats",sf::Style::Default);
     window.setVerticalSyncEnabled(true);
 
     //create tileMap
@@ -87,6 +87,8 @@ int main()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             p2Direction.x += 1.0f;
         }
+
+
 
         player1.setVelocityDirection(p1Direction);
         player2.setVelocityDirection(p2Direction);

@@ -26,6 +26,8 @@ class character{
     void update(float detlaTime);
     void draw(sf::RenderTarget& renderTarget) const;
 
+    sf::Sprite& getSprite(void);
+
     protected:
     float mSpeed=200.0f;
     sf::Vector2f mDirection;

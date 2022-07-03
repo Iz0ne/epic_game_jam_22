@@ -8,7 +8,6 @@ class tilemap: public sf::Drawable, public sf::Transformable{
     public:
     bool load(sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height, std::string tileSetPath);
 
-
     private:
     virtual void draw(sf::RenderTarget& renderTarget, sf::RenderStates renderStates) const;
 
