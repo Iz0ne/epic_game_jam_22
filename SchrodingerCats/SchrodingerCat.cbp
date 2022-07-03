@@ -50,6 +50,8 @@
 		<Unit filename="character.h" />
 		<Unit filename="game.cpp" />
 		<Unit filename="game.h" />
+		<Unit filename="hitbox.cpp" />
+		<Unit filename="hitbox.h" />
 		<Unit filename="level.cpp" />
 		<Unit filename="level.h" />
 		<Unit filename="main.cpp" />

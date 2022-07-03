@@ -1,6 +1,9 @@
 #include"tilemap.h"
 
 bool tilemap::load(sf::Vector2u tileSize, const int* tiles, unsigned int tileNumX, unsigned int tileNumY, std::string tileSetPath){
+    //store tile pointer
+    mTiles = tiles;
+
     //Load the texture
     if(!mTileSet.loadFromFile(tileSetPath)){
         return false;
@@ -15,7 +18,7 @@ bool tilemap::load(sf::Vector2u tileSize, const int* tiles, unsigned int tileNum
         for(unsigned j=0; j<tileNumY; ++j){
 
             //get the current tile ID number (code 0,1,2,3)
-            int tileNumber = tiles[i + j*tileNumX];
+            int tileNumber = mTiles[i + j*tileNumX];
 
             //find its position in the tileSet texture
             int tu = tileNumber % (mTileSet.getSize().x/tileSize.x);    //What is Tu get the
@@ -49,4 +52,15 @@ void tilemap::draw(sf::RenderTarget& renderTarget, sf::RenderStates renderStates
 
     //Draw the vertex array
     renderTarget.draw(mVertices,renderStates);
+}
+
+bool tilemap:: checkCollision(character player) const{
+    int tileNumber = mTiles[int(((player.getSprite().getPosition().x+16)/32)) + int(((player.getSprite().getPosition().y+28)/32))*16];
+    //std::cout<<"TileNumber: "<<tileNumber<<std::endl;
+
+    if(tileNumber!=0){
+        //std::cout<<"Error"<<std::endl;
+        return true;
+    }
+    return false;
 }

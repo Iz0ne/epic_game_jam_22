@@ -19,7 +19,6 @@ animation::animation(int initFrameXPos, int initFrameYPos, int initFrameWidth, i
 void  animation::applyToSprite(sf::Sprite& sprite){
     sprite.setTexture(mTexture);
     sprite.setTextureRect(mFrames[mIdxFrame]);
-
 }
 
 void animation::update(float deltaTime){

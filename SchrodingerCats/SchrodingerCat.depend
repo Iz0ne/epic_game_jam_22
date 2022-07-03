@@ -414,22 +414,24 @@
 1656704693 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\mainc.cpp
 	<SFML/Graphics.hpp>
 
-1656806885 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.cpp
+1656888368 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.cpp
 	"character.h"
 
-1656806921 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\main.cpp
+1656888563 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\main.cpp
 	<SFML/Graphics.hpp>
 	<chrono>
 	"character.h"
 	"object.h"
 	"tilemap.h"
+	<cstdlib>
 
-1656805396 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.h
+1656888147 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\character.h
 	<SFML/Graphics.hpp>
 	<string>
 	"animation.h"
+	"hitbox.h"
 
-1656788756 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\animation.cpp
+1656838500 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\animation.cpp
 	"animation.h"
 
 1656788756 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\animation.h
@@ -444,14 +446,22 @@
 	<SFML/Graphics.hpp>
 	"animation.h"
 
-1656801937 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\tilemap.cpp
+1656857963 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\tilemap.cpp
 	"tilemap.h"
 
-1656806563 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\tilemap.h
+1656843766 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\tilemap.h
 	<SFML/Graphics.hpp>
 	<string>
+	<iostream>
+	"character.h"
 
 1656806220 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\game.cpp
 
 1656806418 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\level.cpp
+
+1656882331 source:c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\hitbox.cpp
+	"hitbox.h"
+
+1656882508 c:\users\mateo\desktop\codeblocks\projects\epicgamejam2022_cpp\schrodingercats\hitbox.h
+	<SFML/Graphics.hpp>
 

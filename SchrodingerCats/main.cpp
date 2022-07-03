@@ -3,6 +3,7 @@
 #include"character.h"
 #include"object.h"
 #include"tilemap.h"
+#include<cstdlib>
 
 using namespace std;
 
@@ -13,12 +14,12 @@ int main()
     window.setVerticalSyncEnabled(true);
 
     //create tileMap
-    const int level[]=
+    const int room[]=
     {
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,1,2,3,0,0,0,0,0,0,0,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
@@ -26,16 +27,23 @@ int main()
     };
 
     tilemap mapLevel;
-    if(!mapLevel.load(sf::Vector2u(32,32),level,16,8,"../SpriteSheets/Tileset/tileset.png")){
+    if(!mapLevel.load(sf::Vector2u(32,32),room,16,8,"../SpriteSheets/Tileset/tileset.png")){
         return -1;
     }
 
-
     //Create players
-    character player1({100.0f,100.0f},"../SpriteSheets/Characters/pipo-nekonin029.png");
-    character player2({100.0f,100.0f},"../SpriteSheets/Characters/pipo-nekonin026.png");
+    character player1({100.0f, 100.0f},"../SpriteSheets/Characters/pipo-nekonin029.png");
+    character player2({100.0f, 100.0f},"../SpriteSheets/Characters/pipo-nekonin026.png");
+    player1.setHitBoxParameters(12,10,10,16);
+    player2.setHitBoxParameters(12,10,10,16);
+    player1.drawHitbox(true);
+    player2.drawHitbox(true);
 
-    object tunnelEffect({256.0f,128.0f},"../SpriteSheets/Objects/pipo-popupemotes015.png");
+
+    object ghostEffect({200.0f, 128.0f},"../SpriteSheets/Objects/pipo-popupemotes084.png");
+    object tunnelEffect({256.0f, 128.0f},"../SpriteSheets/Objects/pipo-popupemotes052.png");
+    object exitDoor({150.0f, 128.0f},"../SpriteSheets/Objects/pipo-popupemotes152.png");
+
 
     //Create time point for measurement
     auto timePoint = std::chrono::steady_clock::now();
@@ -59,18 +67,21 @@ int main()
 
         //Handle Player1 keyboard
         sf::Vector2f p1Direction = {0.0f, 0.0f};
-
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
             p1Direction.y -= 1.0f;
+            player1.setHeading(sf::Vector2f(0.0f,-1.0f));
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
             p1Direction.x -= 1.0f;
+            player1.setHeading(sf::Vector2f(-1.0f,0.0f));
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
             p1Direction.y += 1.0f;
+            player1.setHeading(sf::Vector2f(0.0f,1.0f));
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
             p1Direction.x += 1.0f;
+            player1.setHeading(sf::Vector2f(1.0f,0.0f));
         }
 
         //Handle Player2 keyboard
@@ -89,14 +100,30 @@ int main()
         }
 
 
+        //check colission for player1
+        if(mapLevel.checkCollision(player1)){
+            int randX=rand() % 512;
+            int randY=rand() % 256;
+            sf::Vector2f randomPosition(randX,randY);
+            player1.setVelocity(sf::Vector2f(0.0f,0.0f));
+            player1.setPosition(randomPosition);
+        }
+        else{
+            player1.setVelocity(p1Direction);
+        }
 
-        player1.setVelocityDirection(p1Direction);
-        player2.setVelocityDirection(p2Direction);
+
+
+        player2.setVelocity(p2Direction);
         player1.update(deltaTime);
         player2.update(deltaTime);
+        exitDoor.update(deltaTime);
+        ghostEffect.update(deltaTime);
         tunnelEffect.update(deltaTime);
         window.clear();
         window.draw(mapLevel);
+        exitDoor.draw(window);
+        ghostEffect.draw(window);
         tunnelEffect.draw(window);
         player1.draw(window);
         player2.draw(window);
