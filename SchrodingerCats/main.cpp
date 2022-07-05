@@ -112,6 +112,12 @@ int main()
             player1.setVelocity(p1Direction);
         }
 
+        if(player1.getHitbox().intersects(player2.getHitbox())){
+            cout<<"Collision between player1 and 2"<<endl;
+        }
+        else{
+            cout<<"No collision"<<endl;
+        }
 
 
         player2.setVelocity(p2Direction);

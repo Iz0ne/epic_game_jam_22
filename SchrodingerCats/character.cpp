@@ -99,3 +99,7 @@ void character::setHitBoxParameters(float xOffset, float yOffset, float width, f
 void character::drawHitbox(bool drawHitbox){
     mDrawHitbox=drawHitbox;
 }
+
+sf::FloatRect& character::getHitbox(void){
+    return mHitbox.getRectangle();
+}

@@ -38,6 +38,7 @@ class character{
 
     void setHitBoxParameters(float xOffset, float yOffset, float width, float height);
     void drawHitbox(bool drawHitbox);
+    sf::FloatRect& getHitbox(void);
 
     protected:
     float mSpeed=200.0f;

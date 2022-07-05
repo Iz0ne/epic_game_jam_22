@@ -15,14 +15,13 @@ class hitbox{
 
 
     //Getter functions
+    sf::FloatRect& getRectangle(void);
 
     //Other functions
     void draw(sf::RenderTarget& renderTarget) const;
 
 
     protected:
-    sf::Vector2f mPosition;
-    sf::Vector2f mDimension;
     sf::FloatRect mRectangle;
 };
 #endif // HITBOX_H_INCLUDED
